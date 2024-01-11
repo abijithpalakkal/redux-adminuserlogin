@@ -2,7 +2,6 @@
 import Loginpage from './pages/loginpage'
 import Signuppage from './pages/signuppage'
 import Homepage from './pages/Homepage'
-
 import store from './redux/store'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import { useEffect } from 'react'
@@ -13,6 +12,7 @@ import Adminhomepage from './pages/Adminhomepage'
 import Editpage from './pages/editpage'
 import Editprofilepage from './pages/Editprofilepage'
 import Createuserpage from './pages/Createuserpage'
+import { Navigate } from 'react-router-dom'
 
 function App() {
   console.log("hello")
@@ -34,7 +34,7 @@ const dispatch=useDispatch()
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Loginpage />} />
+          <Route path="/"  element={userauth ? <Navigate to="/home" /> : <Loginpage />} />
           <Route path="/signup" element={<Signuppage />} />
           {userauth && <Route path="/home" element={<Homepage />} />}
           {userauth && <Route path="/editprofile" element={<Editprofilepage/>} />}

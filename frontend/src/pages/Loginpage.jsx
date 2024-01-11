@@ -6,14 +6,14 @@ import { useNavigate } from 'react-router-dom'
 
 function Loginpage() {
   const navigate=useNavigate()
-  const v=useSelector((state)=>{
+  /*const v=useSelector((state)=>{
   return state.userauth
   })
   useEffect(() => {
     // Redirect to the home page if the user is authenticated
     if (v) {
       navigate('/home');
-    }})
+    }})*/
   
   
   return (
