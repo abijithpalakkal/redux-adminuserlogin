@@ -12,6 +12,7 @@ import { checkuserauth } from './Components/actions/useractions'
 import Adminhomepage from './pages/Adminhomepage'
 import Editpage from './pages/editpage'
 import Editprofilepage from './pages/Editprofilepage'
+import Createuserpage from './pages/Createuserpage'
 
 function App() {
   console.log("hello")
@@ -36,11 +37,12 @@ const dispatch=useDispatch()
           <Route path="/" element={<Loginpage />} />
           <Route path="/signup" element={<Signuppage />} />
           {userauth && <Route path="/home" element={<Homepage />} />}
-          <Route path="/editprofile" element={<Editprofilepage/>} />
+          {userauth && <Route path="/editprofile" element={<Editprofilepage/>} />}
 
 
          {adminauth && <Route path="/adminhome" element={<Adminhomepage />} />}
-          <Route path="/useredit/:id" element={<Editpage />} />
+          {adminauth &&<Route path="/useredit/:id" element={<Editpage />} />}
+          {adminauth &&<Route path="/createuser" element={<Createuserpage />} />}
          
           
         </Routes>

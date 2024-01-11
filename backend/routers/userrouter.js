@@ -8,8 +8,8 @@ const multer = require('multer');
 const router=express.Router()
 
 router.post("/signup",async (req,res)=>{
-  
-      // Save the user to the database
+  console.log("jil jil jil")
+      console.log(req.body)
       const savedUser = await Users.create(req.body);
       res.json({state:true})
 

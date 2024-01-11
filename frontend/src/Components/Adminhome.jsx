@@ -57,6 +57,7 @@ const navigate=useNavigate()
 
   return (
     <div>
+      <button style={{backgroundColor:'green',padding: '5px 20px',borderRadius: '20px',marginTop:'20px'} } onClick={()=>{navigate("/createuser")}}>create user</button>
       {loading ? (
         <div>loading...</div>
       ) : (
